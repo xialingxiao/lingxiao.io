@@ -2,20 +2,121 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>lingxiao.io</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lingxiao Xia, Staff Engineer</title>
+<meta name="description" content="Staff Engineer at ByteDance (TikTok). I build software for work and for fun.">
+<meta name="theme-color" content="#111111">
+<meta property="og:title" content="Lingxiao Xia, Staff Engineer">
+<meta property="og:description" content="Staff Engineer at ByteDance (TikTok). I build software for work and for fun.">
+<meta property="og:url" content="https://lingxiao.io/">
+<link rel="canonical" href="https://lingxiao.io/">
 <style>
-  body { margin: 0; min-height: 100vh; display: grid; place-items: center; font: 18px/1.5 system-ui, sans-serif; background: #faf9f7; color: #1a1a1a; }
-  main { max-width: 34rem; padding: 2rem; }
-  h1 { font-size: 2.2rem; line-height: 1.15; margin: 0 0 1rem; }
-  p { color: #555; }
+  html { color-scheme: dark; background: #111; color: #ffffffed; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; font: 16px/1.6 Inter, system-ui, -apple-system, sans-serif; padding-top: env(safe-area-inset-top, 0px); }
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid #9aa6ff; outline-offset: 3px; border-radius: 4px; }
+  .serif { font: italic 400 1em/1 Georgia, "Times New Roman", serif; }
+
+  .site-header { position: sticky; top: 0; z-index: 50; height: 64px; box-sizing: border-box; padding: 0 max(20px, 50vw - 480px);
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    background: #111111b8; backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); border-bottom: 1px solid #ffffff0f; }
+  .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; white-space: nowrap; }
+  .brand b { font-size: 15px; font-weight: 500; letter-spacing: -.01em; }
+  .brand span { color: #ffffff73; font-size: 16px; }
+  .site-nav { display: flex; align-items: center; gap: 20px; font-size: 14px; color: #ffffffb0; }
+  .site-nav a { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; text-decoration: none; }
+  @media (hover: hover) { .site-nav a:hover { color: #ffffffed; } }
+
+  main { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: center; padding: 88px 0 72px; }
+  .hero h1 { margin: 0 0 20px; font-size: clamp(36px, 6vw, 56px); line-height: 1.05; font-weight: 600; letter-spacing: -.03em; }
+  .hero h1 .serif { font-weight: 400; color: #ffffffb0; }
+  .hero p { margin: 0 0 14px; max-width: 34em; font-size: 18px; color: #ffffffb0; }
+  .hero p b { color: #ffffffed; font-weight: 500; }
+  .pixel { width: 100%; height: auto; aspect-ratio: 379 / 499; border-radius: 20px; image-rendering: pixelated; box-shadow: 0 30px 80px -30px #000; }
+
+  .label { margin: 0 0 8px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #ffffff73; }
+  .projects { list-style: none; margin: 0 0 96px; padding: 0; border-top: 1px solid #ffffff14; }
+  .project { border-bottom: 1px solid #ffffff14; }
+  .project a { display: grid; grid-template-columns: 200px minmax(0, 1fr) auto; gap: 8px 32px; padding: 32px 0; text-decoration: none; }
+  .project h3 { margin: 0; font-size: 17px; font-weight: 500; }
+  .project .meta { font-size: 13px; color: #ffffff73; }
+  .project .tag { margin: 0 0 8px; color: inherit; font: italic 400 26px/1.2 Georgia, "Times New Roman", serif; }
+  .project p { margin: 0; color: #ffffffb0; }
+  .project .go { color: #ffffff73; font-size: 14px; white-space: nowrap; }
+  @media (hover: hover) { .project a:hover .tag, .project a:hover .go { color: #fff; } }
+
+  .site-footer { max-width: 1000px; margin: 0 auto; padding: 0 20px calc(24px + env(safe-area-inset-bottom, 0px)); }
+  .site-footer .site-nav { justify-content: center; padding-top: 24px; border-top: 1px solid #ffffff14; color: #ffffff73; }
+
+  @media (width <= 699px) {
+    .brand span { display: none; }
+    .hero { grid-template-columns: 1fr; gap: 32px; padding: 40px 0 56px; }
+    .pixel { max-width: 260px; }
+    .project a { grid-template-columns: 1fr; padding: 24px 0; }
+  }
 </style>
 </head>
 <body>
+<header class="site-header">
+  <a class="brand" href="/"><b>Lingxiao Xia</b><span class="serif">Staff Engineer</span></a>
+  <nav class="site-nav" aria-label="Links">
+    <a href="https://github.com/xialingxiao" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://cv.lingxiao.io" target="_blank" rel="noopener">CV</a>
+  </nav>
+</header>
+
 <main>
-  <h1>lingxiao.io</h1>
-  <p>This is your new site. Tap the bar in the corner and tell it what to build.</p>
+  <section class="hero">
+    <div>
+      <h1>Lingxiao Xia <span class="serif">builds things</span></h1>
+      <p>Staff Engineer on <b>TikTok CRM Growth</b>, building AI-native lead generation with RAG and LLMs. Before that I built and led the team behind TikTok’s ads revenue planning platform.</p>
+      <p>Earlier, co-founder and CTO of Portcast. PhD in Information Engineering. Based in San Jose.</p>
+    </div>
+    <img class="pixel" src="/pixel.webp" width="379" height="499" alt="Pixel-art Lingxiao clinking two glasses together and drinking">
+  </section>
+
+  <h2 class="label">Projects</h2>
+  <ul class="projects">
+    <li class="project">
+      <a href="https://agentkeyboard.com" target="_blank" rel="noopener">
+        <div><h3>Agent Keyboard</h3><div class="meta">Open source, with Vibhas Jain</div></div>
+        <div>
+          <p class="tag">Change your app by talking to it</p>
+          <p>A prompt bar that edits the site it sits on: ask for a change, and a real Claude Code session edits the repo and ships it. I built Sandboxes and Notes.</p>
+        </div>
+        <span class="go">agentkeyboard.com ↗</span>
+      </a>
+    </li>
+    <li class="project">
+      <a href="https://agentkeyboard.com" target="_blank" rel="noopener">
+        <div><h3>Agent Keyboard Cloud</h3><div class="meta">Open source, with Vibhas Jain</div></div>
+        <div>
+          <p class="tag">Your own Agent Keyboard in five minutes</p>
+          <p>Set it up entirely in the browser: it runs on a Sprite in your own Fly account with your own Claude plan, even before you have a site.</p>
+        </div>
+        <span class="go">agentkeyboard.com ↗</span>
+      </a>
+    </li>
+    <li class="project">
+      <a href="https://minmax.page" target="_blank" rel="noopener">
+        <div><h3>minmax.page</h3><div class="meta">Oct 2026 – present</div></div>
+        <div>
+          <p class="tag">A CV for the agentic era</p>
+          <p>One clean profile that people can read and AI agents can search. Write and publish it from Claude, ChatGPT or Cursor through an MCP server.</p>
+        </div>
+        <span class="go">minmax.page ↗</span>
+      </a>
+    </li>
+  </ul>
 </main>
+
+<footer class="site-footer">
+  <nav class="site-nav" aria-label="Footer links">
+    <a href="https://github.com/xialingxiao" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://cv.lingxiao.io" target="_blank" rel="noopener">CV</a>
+  </nav>
+</footer>
 <script src="https://ak-lingxiao-io-b5dxn.sprites.app/widget.js" data-site="lingxiao-io" defer></script>
 </body>
 </html>
