@@ -36,11 +36,12 @@
 
   main { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
   .hero { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: center; padding: 88px 0 72px; }
-  .hero h1 { margin: 0 0 20px; font-size: clamp(36px, 6vw, 56px); line-height: 1.05; font-weight: 600; letter-spacing: -.03em; }
-  .hero h1 .serif { font-weight: 400; color: #ffffffb0; }
+  .hero h1 { margin: 0 0 24px; font-size: clamp(44px, 7vw, 72px); line-height: 1.02; font-weight: 600; letter-spacing: -.03em; }
+  .hero h1 .serif { font-weight: 400; letter-spacing: -.01em; }
   .hero p { margin: 0 0 14px; max-width: 34em; font-size: 18px; color: #ffffffb0; }
-  .hero p b { color: #ffffffed; font-weight: 500; }
-  .pixel { width: 100%; height: auto; aspect-ratio: 379 / 499; border-radius: 20px; image-rendering: pixelated; box-shadow: 0 30px 80px -30px #000; }
+  .hero .where { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #ffffff73; }
+  .pixel { width: 100%; height: auto; aspect-ratio: 379 / 499; image-rendering: pixelated;
+    mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%); }
 
   .label { margin: 0 0 8px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #ffffff73; }
   .projects { list-style: none; margin: 0 0 96px; padding: 0; border-top: 1px solid #ffffff14; }
@@ -59,7 +60,7 @@
   @media (width <= 699px) {
     .brand span { display: none; }
     .hero { grid-template-columns: 1fr; gap: 32px; padding: 40px 0 56px; }
-    .pixel { max-width: 260px; }
+    .pixel { max-width: 260px; justify-self: center; }
     .project a { grid-template-columns: 1fr; padding: 24px 0; }
   }
 </style>
@@ -76,9 +77,9 @@
 <main>
   <section class="hero">
     <div>
-      <h1>Lingxiao Xia <span class="serif">builds things</span></h1>
-      <p>Staff Engineer on <b>TikTok CRM Growth</b>, building AI-native lead generation with RAG and LLMs. Before that I built and led the team behind TikTok’s ads revenue planning platform.</p>
-      <p>Earlier, co-founder and CTO of Portcast. PhD in Information Engineering. Based in San Jose.</p>
+      <h1>Lingxiao Xia<br><span class="serif">Staff Engineer</span></h1>
+      <p>I build AI products at TikTok, and tools for building with agents.</p>
+      <p class="where"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>San Jose</p>
     </div>
     <img class="pixel" src="/pixel.webp" width="379" height="499" alt="Pixel-art Lingxiao clinking two glasses together and drinking">
   </section>
