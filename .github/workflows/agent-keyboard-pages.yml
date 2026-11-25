@@ -1,0 +1,35 @@
+# Added by Agent Keyboard: deploys every push to Cloudflare Pages
+# (the live branch to production, every other branch to its own preview URL).
+name: Cloudflare Pages
+on: push
+permissions:
+  contents: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  deploy:
+    if: ${{ vars.CLOUDFLARE_PAGES_PROJECT != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build and deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          PROJECT: ${{ vars.CLOUDFLARE_PAGES_PROJECT }}
+        run: |
+          DIR=
+          if [ -f package.json ] && node -e 'process.exit(require("./package.json").scripts?.build ? 0 : 1)'; then
+            if [ -f package-lock.json ]; then npm ci; else npm install; fi
+            npm run build
+            for d in dist build out _site; do if [ -d "$d" ]; then DIR=$d; break; fi; done
+          fi
+          if [ -z "$DIR" ]; then
+            DIR=$RUNNER_TEMP/site; mkdir -p "$DIR"
+            tar --exclude='*/.*' --exclude=./node_modules --exclude=./functions -cf - . | tar -xf - -C "$DIR"
+          fi
+          npx -y wrangler@4 pages deploy "$DIR" --project-name="$PROJECT" --branch="$GITHUB_REF_NAME" --commit-dirty=true
