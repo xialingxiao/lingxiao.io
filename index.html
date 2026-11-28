@@ -57,7 +57,9 @@
   .project .tag { margin: 0 0 8px; color: inherit; font: italic 400 26px/1.2 Georgia, "Times New Roman", serif; }
   .project p { margin: 0; color: rgb(var(--ink) / .69); }
   .project .go { color: rgb(var(--ink) / .45); font-size: 14px; white-space: nowrap; }
-  @media (hover: hover) { .project a:hover .tag, .project a:hover .go { color: rgb(var(--ink)); } }
+  .project { position: relative; }
+  .project .code { display: block; position: absolute; top: 60px; right: 0; padding: 0; font-size: 14px; color: rgb(var(--ink) / .45); }
+  @media (hover: hover) { .project a:hover .tag, .project a:hover .go, .project a.code:hover { color: rgb(var(--ink)); } }
 
   .site-footer { max-width: 1000px; margin: 0 auto; padding: 0 20px calc(24px + env(safe-area-inset-bottom, 0px)); }
   .site-footer .site-nav { justify-content: center; padding-top: 24px; border-top: 1px solid rgb(var(--ink) / .08); color: rgb(var(--ink) / .45); }
@@ -67,6 +69,7 @@
     .hero { grid-template-columns: 1fr; gap: 32px; padding: 40px 0 56px; }
     .pixel { max-width: 260px; justify-self: center; }
     .project a { grid-template-columns: 1fr; padding: 24px 0; }
+    .project .code { top: auto; bottom: 24px; }
   }
 </style>
 </head>
@@ -101,6 +104,7 @@
         </div>
         <span class="go">anymcp.chat ↗</span>
       </a>
+      <a class="code" href="https://github.com/anymcp-chat/anymcp.chat" target="_blank" rel="noopener">GitHub ↗</a>
     </li>
     <li class="project">
       <a href="https://minmax.page" target="_blank" rel="noopener">
@@ -121,6 +125,7 @@
         </div>
         <span class="go">agentkeyboard.com ↗</span>
       </a>
+      <a class="code" href="https://github.com/vibhasjain/agent-keyboard" target="_blank" rel="noopener">GitHub ↗</a>
     </li>
     <li class="project">
       <a href="https://agentkeyboard.com/start" target="_blank" rel="noopener">
@@ -131,6 +136,7 @@
         </div>
         <span class="go">Start ↗</span>
       </a>
+      <a class="code" href="https://github.com/vibhasjain/agent-keyboard-cloud" target="_blank" rel="noopener">GitHub ↗</a>
     </li>
   </ul>
 </main>
